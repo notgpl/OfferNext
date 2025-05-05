@@ -593,7 +593,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 99999;
-  background-color: var(--accent-color);
+  background-color: #c2fbd7;
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -602,13 +602,13 @@ h6 {
 
 .scroll-top i {
   font-size: 24px;
-  color: var(--contrast-color);
+  color: black;
   line-height: 0;
 }
 
 .scroll-top:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-  color: var(--contrast-color);
+  background-color: #ade7c3;
+
 }
 
 .scroll-top.active {
@@ -1516,27 +1516,27 @@ section,
   /* Add your styles here */
 }
 
-/* Music Toggle Button */
 .music-toggle {
-  position: absolute;
-  top: 50px;
-  left: 300px;
-  background-color: transparent;
-  color: #adecc4;
+  position: fixed;
+  bottom: 14px;
+  right: 60px; /* Slightly left of scroll-to-top (adjust if needed) */
+  background-color: #c2fbd7;
+  color: rgb(0, 0, 0);
   border: none;
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 50px;
+  padding: 7px 10px 10px 7px;
+  border-radius: 2%;
   cursor: pointer;
-  z-index: 1;
-  box-shadow: transparent;
-  transition: background-color 0.3s ease;
+  font-size: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
 }
 
-.music-toggle i {
-  pointer-events: none;
+.music-toggle.active {
+  opacity: 1;
 }
+.music-toggle:hover {
+  background-color: #ade7c3;;
+}
+
+
