@@ -83,7 +83,7 @@
             <p>At Offernext, we provide cutting-edge IT solutions designed to empower businesses through innovative web development, digital marketing, and customized tech services. Our goal is to help companies grow by enhancing their online presence and delivering technology that drives results.</p>
             <div class="d-flex">
               <a class="button-4"  href="index.html#about">Get Started</a> &nbsp;
-              <a class="button-5" role="button" href="#">Recent Projects</a>
+              <a class="button-5" role="button" href="index.html#recent-projects">Recent Projects</a>
             </div>
           </div>
           <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="200">
@@ -163,36 +163,25 @@
             </div>
           </div><!-- End Service Item -->
 
-          <div class="col-xl-3" data-aos="fade-up" data-aos-delay="200">
-            <div class="jj position-relative" style="width: max-content;">
-              <h4>Let's get into some examples</a></h4>
-              <p>Take a look at some templates, designs, and real website examples we've crafted..</p>
-              
-            <div class="container">
-              <div class="row gy-4">
-      
-                <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
-                  
-                  <div class="member d-flex align-items-start">
-                    <!-- Music Button -->
-                    <button class="music-toggle" id="music-toggle">
-                      <i class="fas fa-play"></i>
-                  </button>
-
-                    <div class="member-info">
-                      <h4>Don't Click!</h4>
-                      <span>Ethical Bomb ~</span>
-                      <p>This can destory your device (fr) </p>
-                    </div>
-                  </div>
-                </div><!-- End Team Member -->
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-cash-coin"></i></div>
+              <h4><a href="service-details.html" class="stretched-link">Paid Promotions</a></h4>
+              <p>From targeted social media ads to strategic Google campaigns — we run paid promotions that grow your audience and boost your visibility</p>
+            </div>
           </div><!-- End Service Item -->
-          </div>
-          </div>
-          </div>
-          </div>
 
-        </section>
+          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-item position-relative">
+              <div class="icon"><i class="bi bi-bar-chart"></i></div>
+              <h4><a href="service-details.html" class="stretched-link">Marketing</a></h4>
+              <p>From social media strategies to engaging content and campaign planning — we offer marketing solutions that increase reach and strengthen your brand presence.</p>
+            </div>
+          </div><!-- End Service Item -->
+       </div>
+    </div>
+    </section>
+
 <!-- Background Music -->
 <audio id="background-music" loop>
   <source src="song.mp3" type="audio/mpeg">
@@ -218,13 +207,18 @@
 </script>
 
 
-          <!-- Service Details Section -->
-    <section id="portfolio-details" class="portfolio-details section">
+    <!-- Recent Projects Section -->
+    <section id="recent-projects" class="portfolio-details">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Recent Projects</h2>
+        <p>Check out our recent projects — you might like them! We can create something similar for you</p>
+      </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
+        
 
         <div class="row gy-4">
-
           <div class="col-lg-8">
             <div class="portfolio-details-slider swiper init-swiper">
 
@@ -366,7 +360,7 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2> Want To Buy Any? Contact!</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <p>Got something in mind? Let us know — we handle all kinds of orders and purchases</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -451,6 +445,12 @@
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  
+  <!-- Music Play btn-->
+  <button class="music-toggle">Music</button>
+  <audio id="background-audio" src="song.mp3"></audio>
+  
+  
 
   <!-- Preloader -->
   <div id="preloader"></div>
