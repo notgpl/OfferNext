@@ -212,23 +212,32 @@
 
 })();
 
-document.addEventListener("DOMContentLoaded", () => {
-  const snowContainer = document.getElementById("snow-container");
+/**
+ * Music Play Button Functionality gplooofdddef
+ */
 
-  function createSnowflake() {
-    const snowflake = document.createElement("div");
-    snowflake.classList.add("snowflake");
-    snowflake.textContent = "❄"; // Snowflake character
-    snowflake.style.left = Math.random() * 100 + "vw";
-    snowflake.style.animationDuration = Math.random() * 3 + 2 + "s"; // Random fall duration
-    snowflake.style.fontSize = Math.random() * 10 + 10 + "px"; // Random size
-    snowContainer.appendChild(snowflake);
+document.addEventListener("DOMContentLoaded", function () {
+  let musicBtn = document.querySelector('.music-toggle');
+  let audio = document.getElementById('background-audio');
 
-    // Remove snowflake after animation
-    setTimeout(() => {
-      snowflake.remove();
-    }, 5000);
+  function toggleMusicButton() {
+    if (musicBtn) {
+      window.scrollY > 100
+        ? musicBtn.classList.add('active')
+        : musicBtn.classList.remove('active');
+    }
   }
 
-  setInterval(createSnowflake, 200); // Generate snowflakes every 200ms
+  window.addEventListener('scroll', toggleMusicButton);
+
+  musicBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    if (audio.paused) {
+      audio.play();
+      musicBtn.textContent = ' Pause';
+    } else {
+      audio.pause();
+      musicBtn.textContent = ' Play';
+    }
+  });
 });
