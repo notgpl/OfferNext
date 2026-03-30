@@ -659,7 +659,7 @@ header::after {
 @media (max-width: 600px) {
   .hero {
     min-height: 100vh;
-    padding-top: 120px; /* 🔥 adjust this to move up/down */
+    padding-top: 80px; /* 🔥 adjust this to move up/down */
     padding-bottom: 20px;
     display: flex;
     align-items: flex-start; /* 🔥 IMPORTANT */
