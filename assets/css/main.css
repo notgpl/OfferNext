@@ -529,65 +529,97 @@ header::after {
   display: none;
 }
 
-/* 🔥 TABLET + MOBILE */
+/* 🔥 TABLET + MOBILE (PREMIUM VERSION) */
 @media (max-width: 900px) {
   .offer-box {
     display: block;
 
     margin: 18px auto 0;
-    padding: 14px;
+    padding: 16px 18px;
 
     width: 100%;
     max-width: 340px;
 
-    text-align: center;
+    text-align: left;
 
-    background: rgba(5, 10, 20, 0.75);
-    backdrop-filter: blur(14px);
+    background: linear-gradient(135deg, rgba(34,197,94,0.15), rgba(2,6,23,0.7));
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
 
-    border: 1px solid rgba(34,197,94,0.25);
-    border-radius: 14px;
+    border: 1px solid rgba(74,222,128,0.35);
+    border-radius: 16px;
 
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    box-shadow: 
+      0 10px 40px rgba(34,197,94,0.15),
+      inset 0 0 20px rgba(74,222,128,0.08);
+
+    position: relative;
+    overflow: hidden;
   }
 
+  /* glow effect */
+  .offer-box::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(74,222,128,0.25), transparent 60%);
+    opacity: 0.7;
+  }
+
+  /* title */
   .offer-box p {
+    font-size: 12px;
     color: #4ade80;
-    font-size: 13px;
     margin-bottom: 4px;
+    letter-spacing: 0.5px;
   }
 
+  /* description */
   .offer-box span {
+    display: block;
     font-size: 13px;
-    color: #cbd5e1;
+    color: #e2e8f0;
+    margin-bottom: 10px;
   }
 
+  /* CTA */
   .offer-box a {
-    display: inline-block;
-    margin-top: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     font-size: 13px;
     color: #22c55e;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+
+  .offer-box a:hover {
+    transform: translateX(4px);
   }
 }
 
 /* 🔥 MOBILE PERFECT SPACING */
 @media (max-width: 600px) {
   .hero-buttons {
-    margin-bottom: 14px; /* ✅ clean gap */
+    margin-bottom: 14px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 10px;
   }
 
   .offer-box {
-    margin: 0 auto; /* ✅ EXACTLY below buttons */
+    margin: 0 auto;
     max-width: 300px;
-    padding: 12px;
+    padding: 14px;
+    text-align: left;
   }
 
   .offer-box p {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .offer-box span {
-    font-size: 10px;
+    font-size: 11px;
     line-height: 1.4;
   }
 
@@ -596,40 +628,16 @@ header::after {
   }
 }
 
-@media (max-width: 600px) {
+/* 🔥 HERO POSITION CONTROL (MERGED CLEAN) */
+@media (max-width: 900px) {
   .hero {
     min-height: 100vh;
-    padding-top: 110px;
+    padding-top: 140px; /* adjust here */
     padding-bottom: 40px;
-
     display: flex;
-    align-items: center;
+    align-items: flex-start; /* 🔥 moves content UP */
   }
 
-  .hero-text {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-
-  .desc {
-    font-size: 14px;
-    max-width: 90%;
-  }
-}
-@keyframes floatUp {
-  from {
-    opacity: 0;
-    transform: translateX(-50%) translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-}
-
-@media (max-width: 900px) {
   .hero-grid {
     grid-template-columns: 1fr;
     text-align: center;
@@ -649,15 +657,30 @@ header::after {
 }
 
 @media (max-width: 600px) {
+  .hero {
+    min-height: 100vh;
+    padding-top: 120px; /* 🔥 adjust this to move up/down */
+    padding-bottom: 20px;
+    display: flex;
+    align-items: flex-start; /* 🔥 IMPORTANT */
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   .btn1,
   .btn2 {
-    padding: 10px 16px;
-    font-size: 13px;
+    padding: 10px 14px;
+    font-size: 12px;
     border-radius: 10px;
+    white-space: nowrap; /* 🔥 FIX TEXT BREAK */
   }
-  
+
   .hero h1 {
-    font-size: 32px; /* 🔥 perfect balance */
+    font-size: 32px;
   }
 
   .desc {
@@ -671,27 +694,25 @@ header::after {
     padding: 5px 12px;
   }
 
-  .hero {
-    min-height: 100vh;
-    padding-top: 120px;
-    padding-bottom: 20px; 
-    display: flex;
-    align-items: center; 
-  }
-
   #hero canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
- }
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+}
 
- .offer-box {
-    width: 90%;
-    font-size: 12px;
-    bottom: 80px;
+/* OPTIONAL SMALL ANIMATION (kept from your code) */
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
   }
 }
 /* End Hero Section */
