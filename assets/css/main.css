@@ -318,7 +318,7 @@ header::after {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .hamburger {
     display: flex;
   }
@@ -340,6 +340,10 @@ header::after {
   overflow: hidden;
   padding-top: 80px;
   z-index: 1;
+}
+
+#hero {
+  background: radial-gradient(circle at center, #022c22, #020617);
 }
 
 #hero::after {
@@ -557,16 +561,15 @@ header::after {
     overflow: hidden;
   }
 
-  /* glow effect */
   .offer-box::before {
     content: "";
     position: absolute;
     inset: 0;
     background: radial-gradient(circle at top right, rgba(74,222,128,0.25), transparent 60%);
     opacity: 0.7;
+    pointer-events: none;
   }
 
-  /* title */
   .offer-box p {
     font-size: 12px;
     color: #4ade80;
@@ -574,7 +577,6 @@ header::after {
     letter-spacing: 0.5px;
   }
 
-  /* description */
   .offer-box span {
     display: block;
     font-size: 13px;
@@ -582,7 +584,6 @@ header::after {
     margin-bottom: 10px;
   }
 
-  /* CTA */
   .offer-box a {
     display: inline-flex;
     align-items: center;
@@ -628,14 +629,13 @@ header::after {
   }
 }
 
-/* 🔥 HERO POSITION CONTROL (MERGED CLEAN) */
 @media (max-width: 900px) {
   .hero {
     min-height: 100vh;
-    padding-top: 140px; /* adjust here */
+    padding-top: 140px; 
     padding-bottom: 40px;
     display: flex;
-    align-items: flex-start; /* 🔥 moves content UP */
+    align-items: flex-start; 
   }
 
   .hero-grid {
@@ -659,10 +659,10 @@ header::after {
 @media (max-width: 600px) {
   .hero {
     min-height: 100vh;
-    padding-top: 80px; /* 🔥 adjust this to move up/down */
+    padding-top: 80px; 
     padding-bottom: 20px;
     display: flex;
-    align-items: flex-start; /* 🔥 IMPORTANT */
+    align-items: flex-start; 
   }
 
   .hero-text {
@@ -676,7 +676,7 @@ header::after {
     padding: 10px 14px;
     font-size: 12px;
     border-radius: 10px;
-    white-space: nowrap; /* 🔥 FIX TEXT BREAK */
+    white-space: nowrap; 
   }
 
   .hero h1 {
@@ -1473,6 +1473,7 @@ header::after {
   color: white;
   text-align: center;
   justify-content: center;
+  line-height: 0
 }
 
 .fab.whatsapp {
@@ -1494,11 +1495,10 @@ header::after {
 }
 
 .fab.whatsapp i {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  font-size: 22px;
+  line-height: 1;
+  display: block; 
 }
-
 .fab.top {
   opacity: 0;
   pointer-events: none;
