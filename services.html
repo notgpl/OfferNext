@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offernext — Services</title>
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/files/aos/dist/aos.css">
+
+  <style>
+    .page-hero {
+      padding: 160px 0 80px;
+      text-align: center;
+      background: radial-gradient(circle at center, #022c22, #020617);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: "";
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(34,197,94,0.08), transparent 70%);
+      top: -150px;
+      left: 50%;
+      transform: translateX(-50%);
+      pointer-events: none;
+    }
+
+    .page-hero h1 {
+      font-size: 52px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .page-hero p {
+      color: #ffffff;
+      font-size: 17px;
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    .breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.breadcrumb a {
+  color: #4ade80;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.breadcrumb a:hover { color: #2CD546; }
+
+.breadcrumb span {
+  color: white;
+}
+
+    @media (max-width: 600px) {
+      .page-hero { padding: 130px 20px 60px; }
+      .page-hero h1 { font-size: 32px; }
+      .page-hero p { font-size: 14px; }
+    }
+
+    /* ── Service Card Extended (same as main.css additions) ── */
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .service-card .icon { margin: 0 0 18px 0; }
+
+    .service-card-desc {
+      color: #9ca3af;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .service-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+
+    .service-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #cbd5e1;
+      font-size: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .service-list li:last-child { border-bottom: none; }
+
+    .service-list li i {
+      color: #2CD546;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+
+    .service-card-footer {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: rgba(34,197,94,0.07);
+      border: 1px solid rgba(34,197,94,0.15);
+      margin-top: auto;
+    }
+
+    .service-card-footer i {
+      color: #4ade80;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .service-card-footer span {
+      color: #9ca3af;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+
+    .service-cards { align-items: stretch; }
+  </style>
+</head>
+
+<body>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="ring-wrap">
+      <div class="ring r1"></div>
+      <div class="ring r2"></div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <header id="navbar" data-aos="fade-in">
+    <div class="container nav-content">
+      <div class="logo">
+        <img src="assets/img/favicon.png" alt="Offernext">
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="services.html" class="nav-link active">Services</a></li>
+        <li><a href="index.html#whyus" class="nav-link">Why Choose Us</a></li>
+        <li><a href="index.html#faq" class="nav-link">FAQ</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <a class="btn1" href="contact.html">Get Started</a>
+        <div class="hamburger" onclick="toggleMenu(this)">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="services.html">Services</a>
+    <a href="index.html#whyus">Why Choose Us</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="index.html#faq">FAQ</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="breadcrumb" data-aos="fade-up">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span style="color: #ffffff;">Services</span>
+      </div> 
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="service" class="service">
+    <div class="container">
+      <h2 class="section-title" data-aos="fade-up" data-aos-delay="100">
+        Where <span class="text-gradient-green">Brands</span> Start Winning
+      </h2>
+      <p class="section-desc" data-aos="fade-up" data-aos-delay="200">
+        We help businesses streamline workflows, automate processes,
+        and build scalable digital systems.
+      </p>
+
+      <div class="service-cards">
+
+        <!-- Web Development -->
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="100">
+          <div class="icon"><i class="bi bi-laptop"></i></div>
+          <h3>Website Development</h3>
+          <p class="service-card-desc">We build fast, responsive & SEO-friendly websites that look great and convert visitors into customers.</p>
+          <ul class="service-list">
+            <li><i class="bi bi-check-circle-fill"></i> Business Websites</li>
+            <li><i class="bi bi-check-circle-fill"></i> E-commerce Websites</li>
+            <li><i class="bi bi-check-circle-fill"></i> Landing Pages</li>
+            <li><i class="bi bi-check-circle-fill"></i> Portfolio Websites</li>
+            <li><i class="bi bi-check-circle-fill"></i> Booking & Inquiry Websites</li>
+            <li><i class="bi bi-check-circle-fill"></i> Mobile Responsive Design</li>
+            <li><i class="bi bi-check-circle-fill"></i> SEO Friendly Development</li>
+            <li><i class="bi bi-check-circle-fill"></i> Website Maintenance & Support</li>
+          </ul>
+          <div class="service-card-footer">
+            <i class="bi bi-bullseye"></i>
+            <span>Your website is your 24/7 salesperson. Let's make it work for you.</span>
+          </div>
+        </div>
+
+        <!-- Digital Marketing -->
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="200">
+          <div class="icon"><i class="bi bi-megaphone"></i></div>
+          <h3>Digital Marketing Services</h3>
+          <p class="service-card-desc">We create data-driven marketing strategies that increase visibility, generate leads, and grow your business.</p>
+          <ul class="service-list">
+            <li><i class="bi bi-check-circle-fill"></i> Social Media Marketing</li>
+            <li><i class="bi bi-check-circle-fill"></i> Instagram & Facebook Ads</li>
+            <li><i class="bi bi-check-circle-fill"></i> Google Ads</li>
+            <li><i class="bi bi-check-circle-fill"></i> Google Business Profile Setup & Optimization</li>
+            <li><i class="bi bi-check-circle-fill"></i> Lead Generation Campaigns</li>
+            <li><i class="bi bi-check-circle-fill"></i> Content Creation</li>
+            <li><i class="bi bi-check-circle-fill"></i> Poster & Banner Designing</li>
+            <li><i class="bi bi-check-circle-fill"></i> Hiring Advertisements</li>
+            <li><i class="bi bi-check-circle-fill"></i> WhatsApp Marketing</li>
+            <li><i class="bi bi-check-circle-fill"></i> Local Business Promotion</li>
+          </ul>
+          <div class="service-card-footer">
+            <i class="bi bi-graph-up-arrow"></i>
+            <span>More Visibility. More Leads. More Customers.</span>
+          </div>
+        </div>
+
+        <!-- Creative Design -->
+        <div class="service-card" data-aos="zoom-in" data-aos-delay="300">
+          <div class="icon"><i class="bi bi-palette"></i></div>
+          <h3>Creative Design Services</h3>
+          <p class="service-card-desc">Creative designs that make your brand stand out and leave a lasting impression.</p>
+          <ul class="service-list">
+            <li><i class="bi bi-check-circle-fill"></i> Logo Design</li>
+            <li><i class="bi bi-check-circle-fill"></i> Social Media Posters</li>
+            <li><i class="bi bi-check-circle-fill"></i> Business Cards</li>
+            <li><i class="bi bi-check-circle-fill"></i> Flyers & Brochures</li>
+            <li><i class="bi bi-check-circle-fill"></i> Banner Designs</li>
+            <li><i class="bi bi-check-circle-fill"></i> Product Promotion Creatives</li>
+            <li><i class="bi bi-check-circle-fill"></i> Branding & Identity Design</li>
+            <li><i class="bi bi-check-circle-fill"></i> Presentation & Other Designs</li>
+          </ul>
+          <div class="service-card-footer">
+            <i class="bi bi-lightbulb"></i>
+            <span>Creative designs. Strong brand. Better engagement.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="faq premium-bg">
+    <div class="container">
+      <p class="faq-badge" data-aos="fade-up">Frequently Asked Questions</p>
+      <h2 class="faq-title" data-aos="fade-up" data-aos-delay="100">
+        Your <span class="text-gradient-green">questions</span> answered
+      </h2>
+      <p class="faq-desc" data-aos="fade-up" data-aos-delay="200">
+        Everything you need to know about our services and workflow.
+      </p>
+      <div class="faq-list">
+        <div class="faq-item active" data-aos="fade-up" data-aos-delay="100">
+          <div class="faq-question">What services do you provide? <span>−</span></div>
+          <div class="faq-answer">We build modern websites, create designs, and run ads to help your business grow.</div>
+        </div>
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+          <div class="faq-question">Do I need to make a reservation? <span>+</span></div>
+          <div class="faq-answer">No, you can contact us anytime and we'll guide you through the process.</div>
+        </div>
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+          <div class="faq-question">Are there flexible pricing options? <span>+</span></div>
+          <div class="faq-answer">Yes, we offer flexible pricing based on your needs and project scope.</div>
+        </div>
+        <div class="faq-item" data-aos="fade-up" data-aos-delay="400">
+          <div class="faq-question">What payment methods are accepted? <span>+</span></div>
+          <div class="faq-answer">We accept UPI, bank transfer, and international payments.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container contact-grid">
+      <!-- Contact Left Section -->
+      <div class="contact-left">
+        <p class="contact-badge" data-aos="fade-right">Contact Us</p>
+        <h2 class="contact-title" data-aos="fade-right" data-aos-delay="100">Let's Get In <span class="text-gradient-green">Touch</span></h2>
+        <p class="contact-desc" data-aos="fade-right" data-aos-delay="200">
+          Have a project in mind? Reach out and let's build something amazing together.
+        </p>
+
+        <!-- Contact Info Boxes Section -->
+        <div class="contact-info">
+          <div class="contact-box" data-aos="fade-right" data-aos-delay="300">
+            <i class="bi bi-envelope"></i>
+            <span>offernext.in@gmail.com</span>
+          </div>
+
+          <div class="contact-box" data-aos="fade-right" data-aos-delay="400">
+            <i class="bi bi-instagram"></i>
+            <span>@offernext</span>
+            <a href="https://instagram.com/offernext.in" target="_blank" class="whatsapp-btn">
+              →
+            </a>
+          </div>
+
+          <div class="contact-box" data-aos="fade-right" data-aos-delay="500">
+            <i class="bi bi-whatsapp"></i>
+            <span>+91 9037588940</span>
+            
+            <a href="https://wa.me/919037588940?text=Hey" target="_blank" class="whatsapp-btn">
+              →
+            </a>
+               <span>+91 7558046807</span>
+               <a href="https://wa.me/917558046807?text=Hey" target="_blank" class="whatsapp-btn">
+              →
+            </a>
+          
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Right Section (Chat Widget) -->
+      <div class="contact-right">
+        <div class="chat-card" data-aos="zoom-in">
+          <!-- Chat Header -->
+          <div class="chat-header">
+            <span class="dot"></span>
+            <p>Offernext Assistant</p>
+          </div>
+
+          <!-- Chat Messages Body -->
+          <div class="chat-body">
+            <div class="msg user">
+              <p>Hey 👋 I want a website.</p>
+            </div>
+            <div class="msg bot">
+              <p>Great — what type of website are you planning?</p>
+            </div>
+            <div class="msg user">
+              <p>It's for my startup brand.</p>
+            </div>
+            <div class="msg bot">
+              <p>Perfect. Let's build a strong, modern presence for your brand 🚀</p>
+            </div>
+          </div>
+
+          <!-- Chat Input Section -->
+          <div class="chat-input">
+            <input type="text" placeholder="Type your message..." />
+            <button>→</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-cta" data-aos="fade-up">
+      <div class="cta-content">
+        <div>
+          <h2>Don't just scroll — start building</h2>
+          <p>Let Offernext help you create stunning digital experiences.</p>
+        </div>
+        <a class="btn1" href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-main container" data-aos="fade-up" data-aos-delay="150">
+      <div class="footer-brand">
+        <h2>Offernext</h2>
+        <p>We build websites, run ads, and create designs that help your business grow faster online.</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h4>Company</h4>
+          <p>Services</p><p>Careers</p><p>Blog</p>
+        </div>
+        <div>
+          <h4>Services</h4>
+          <p>Web Design</p><p>Graphic Design</p><p>Ads</p>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <p>Terms</p><p>Privacy</p><p>Cookies</p>
+        </div>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>Email: offernext.in@gmail.com</p>
+        <p>Phone: +91 9037588940</p>
+        <p>Phone: +91 7558046807</p>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Offernext. All rights reserved.</div>
+  </footer>
+
+  <!-- Floating Buttons -->
+  <div class="floating-buttons">
+    <button id="scrollTopBtn" class="fab top">↑</button>
+    <a href="https://wa.me/919037588940?text=Hey" target="_blank" class="fab whatsapp">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </div>
+
+  <!-- Preloader fix for inner pages -->
+  <script>
+    window.addEventListener("DOMContentLoaded", function () {
+      const preloader = document.getElementById("preloader");
+      if (preloader) {
+        setTimeout(function () {
+          preloader.classList.add("preloader-hide");
+          setTimeout(function () { preloader.style.display = "none"; }, 400);
+        }, 500);
+      }
+    });
+  </script>
+
+  <script src="assets/js/script.js"></script>
+  <script src="assets/files/aos/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, easing: 'ease-in-out', once: true, offset: 80 });
+  </script>
+
+</body>
+</html>
